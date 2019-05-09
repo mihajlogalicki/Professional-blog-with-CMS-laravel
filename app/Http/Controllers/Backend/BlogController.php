@@ -62,27 +62,16 @@ class BlogController extends BackendController
         return redirect(route('admin.index'))->with('message', 'Your post was created successfully!');
     }
 
-    private function handleRequest($request){
+     private function handleRequest($request){
 
         $data = $request->all();
 
         if($request->hasFIle('image')){
 
-            $width = config('cms.image.thumbnail.width');
-            $height = config('cms.image.thumbnail.height');
             $image = $request->file('image');
             $fileName = $image->getClientOriginalName();
             $destination = $this->uploadPath;
             $successUploaded =  $image->move($destination, $fileName);
-
-            if($successUploaded){
-                
-                $extension = $image->getClientOriginalExtension();
-                $thumbnail = str_replace(".{$extension}", "_thumb.{$extension}", $fileName);
-                Image::make($destination. '/' . $fileName)
-                     ->resize($width, $height)
-                     ->save($destination . "/" . $thumbnail);
-            }
             $data['image'] = $fileName;
 
         }
