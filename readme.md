@@ -2,9 +2,9 @@
 I am building Real World application and application contain:
 - My own Middleware for Authorization and Authentication
 (Author can delete only own post, Admin can delete all posts, categories and to manage users).
-- Grouped and arranged route with Middleware and roles.
+- Grouped and arranged routes with Middleware and roles.
 - I am used ORM - Eloquent for realationships, queries and display data.
-- Created scope functions, Accessor and NavigationComposer file for cleaner and tidy code.
+- Created scope functions, Accessors and NavigationComposer file for cleaner and tidy code.
 - Each form has validation especially for uploading files!
 ### Laravel project functionality
 * Unauthorized user: Search the blog, filter the blog by categories, tags, authors, display popular blogs, post a comment for special blog.
